@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>task_1_5_1</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css" />
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        var jsonlist; // 数据列表
+
+        // 加载数据
+        function LoadJson() {
+            $.get("/Data/files.json", function(data, status) {
+                console.log(status);
+                console.log(data);
+                jsonlist = data;
+                renderRight();
+                renderIndex();
+            });
+        }
+
+        // 生成右侧列表
+        function renderRight() {
+            //
+            var listStr = "";
+            var len = jsonlist.files.length;
+            for (var i = 0; i < len; i++) {
+                listStr += "<li><a href=\"javascript:OpenMD(" + i + ",'" + jsonlist.files[i].url + "')\">" + jsonlist.files[i].title + "</a></li>";
+            }
+            $("#rightlist").html(listStr);
+            console.log(listStr);
+        }
+
+        // 打开MD文件
+        function OpenMD(i, path) {
+            $("#title").html(jsonlist.files[i].title);
+            $("#authorandtime").html(jsonlist.files[i].time);
+            $.get(path, function(data, status) {
+                console.log(status);
+                console.log(data);
+                if (status == "success") {
+                    var idx = data.indexOf("------");
+                    data = data.substr(idx + 6);
+                    // 编译
+                    $("#blogcontent").html(data);
+                }
+            });
+        }
+
+        function renderIndex() {
+            //
+            var listStr = "";
+            var len = jsonlist.files.length;
+            for (var i = 0; i < len; i++) {
+                listStr += "<li><a href=\"javascript:OpenMD(" + i + ",'" + jsonlist.files[i].url + "')\">" + jsonlist.files[i].title + "</a>" + jsonlist.files[i].time + "</li>";
+            }
+            $("#blogcontent").html("<ul>" + listStr + "</ul>");
+            console.log(listStr);
+        }
+
+        window.onload = function() {
+            LoadJson();
+        }
+    </script>
+
+</head>
+
+<body>
+    <header class="head">
+        <h1 class="top-h1"><img alt="" src="images/head.png" /></h1>
+        <nav class="head-nav">
+            <ul>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="right">
+            <h2>这是一个侧边栏</h2>
+            <ul id="rightlist">
+            </ul>
+        </div>
+        <div class="left">
+            <article>
+                <h1 id="title">文章一级标题</h1>
+                <p class="author" id="authorandtime">文章作者 发布时间</p>
+                <p id="blogcontent">
+                    这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章
+                </p>
+            </article>
+        </div>
+    </div>
+    <p class="copyright">
+        版权所有&copy;Bruce
+    </p>
+</body>
+
+</html>

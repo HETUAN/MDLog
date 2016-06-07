@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>asdf</title>
+    <link rel="stylesheet" type="text/css" href="css/font1.css">
+    <link rel="stylesheet" type="text/css" href="css/font2.css">
+    <link rel="stylesheet" type="text/css" href="css/foundation.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style1.css">
+</head>
+<body>
+    <textarea id="text-input" oninput="this.editor.update()" rows="6" cols="60"></textarea>
+    <div id="preview"> </div>
+    <script src="scripts/showdown.js"></script>
+    <script>
+        function Editor(input, preview) {
+            this.update = function() {
+                var converter = new showdown.Converter();
+                    //text = '#hello, markdown!',
+                    //html = converter.makeHtml(text);
+                    preview.innerHTML = converter.makeHtml(input.value);
+            };
+            input.editor = this;
+            this.update();
+        }
+        var $ = function(id) {
+            return document.getElementById(id);
+        };
+        new Editor($("text-input"), $("preview"));
+
+        
+    </script>
+</body>
+</html>

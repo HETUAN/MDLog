@@ -1,0 +1,119 @@
+﻿* {
+    border: 0px solid red;
+}
+ul{
+	list-style: none;
+    margin: 0px;
+	padding:0px;
+}
+ul li{
+    margin: 0px;
+	padding:0px;
+}
+
+ul li{
+    margin: 0px;
+	padding:0px;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 黑体;
+    font-size: 14px;
+    background-color: rgb(222, 222, 222);
+}
+
+.head {
+    background-color: rgb(0, 150, 166);
+    height: 60px;
+    margin: 0px;
+	overflow: hidden;
+}
+
+.top-h1 {
+    float: left;
+    color: #FFFFFF;
+    margin: 0px 30px 0px;
+}
+
+.top-h1 img {
+    height: 60px; 
+}
+
+.head-nav {
+    float: right;
+    padding-top: 10px;
+    margin-right: 30px;
+}
+
+.head-nav ul li {
+    margin: 0px 10px;
+    color: #FFFFFF;
+    display: inline-block;
+}
+ .content {
+ 	margin: 0px; 
+ 	overflow: hidden;
+ }
+ .content .right{
+ 	width:350px;
+ 	float: right;  
+ 	margin: 20px 20px 20px 10px;
+ 	border-right: 3px solid gray;
+ 	border-bottom: 3px solid gray; 
+ 	background-color: #FFFFFF;
+ }
+
+ .content .right h2{
+    height:40px;
+    line-height: 40px;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 3px solid gray;
+ }
+
+.content .right div{
+ 	margin: 10px 0px;
+ }
+ .right ul{
+	 margin-left: 30px;
+ }
+ .right ul li{
+	 line-height: 25px;
+ }
+
+.content .left{  
+	margin: 20px 390px 20px 20px; 
+}
+
+.content .left article{
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: #FFFFFF;
+ 	border-right: 3px solid gray;
+ 	border-bottom: 3px solid gray; 
+	overflow: hidden;
+}
+
+.content .left article .author{
+	text-indent: 0em;
+	font-size: 14px;
+	color:gray;
+}
+
+.content .left article p{
+	text-indent: 2em;
+	font-size: 16px;
+	color:black;  
+	line-height: 180%;
+}
+
+.copyright {
+    height: 70px;
+    background-color: rgb(0, 150, 166);
+    color: #FFFFFF;
+    line-height: 70px;
+    text-align: center;
+    padding: 0px;
+    margin-bottom: 0px;
+}

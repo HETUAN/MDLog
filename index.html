@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>MDLog</title> 
+  <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+  <div id="div1"></div>
+<script type="text/javascript"> 
+      function LoadMd(){
+         $.get("/md/1.md",function(data,status){
+            alert("Data: " + data + "nStatus: " + status);
+          });
+      }
+      function LoadJson(){
+        //
+        console.log(window.location)
+      }
+      window.onload= function(){
+        LoadMd();
+        LoadJson();
+      }
+</script>
+</body>
+</html>
