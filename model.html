@@ -57,9 +57,9 @@
             var listStr = "";
             var len = jsonlist.files.length;
             for (var i = 0; i < len; i++) {
-                listStr += "<li><a href=\"javascript:OpenMD(" + i + ",'" + jsonlist.files[i].url + "')\">" + jsonlist.files[i].title + "</a>" + jsonlist.files[i].time + "</li>";
+                listStr += "<li><a href=\"javascript:OpenMD(" + i + ",'" + jsonlist.files[i].url + "')\">" + jsonlist.files[i].title + "</a><span style='float:right;'>" + jsonlist.files[i].time + "</span></li>";
             }
-            $("#blogcontent").html("<ul>" + listStr + "</ul>");
+            $("#blogcontent").html("<ul class='leftlist'>" + listStr + "</ul>");
             console.log(listStr);
         }
 
@@ -90,13 +90,12 @@
             </ul>
         </div>
         <div class="left">
-            <article>
+            <article class="lefthead">
                 <a href="javascript:renderIndex()">Back To List</a>
                 <h1 id="title">文章一级标题</h1>
                 <p class="author" id="authorandtime">文章作者 发布时间</p>
-                <p id="blogcontent">
-                    这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章，这是很长很长的一段文章
-                </p>
+            </article>
+            <article id="blogcontent">  
             </article>
         </div>
     </div>

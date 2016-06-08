@@ -1,20 +1,44 @@
 ﻿* {
     border: 0px solid red;
 }
-ul{
-	list-style: none;
+
+ul {
+    list-style: none;
     margin: 0px;
-	padding:0px;
-}
-ul li{
-    margin: 0px;
-	padding:0px;
+    padding: 0px;
 }
 
-ul li{
+ul li {
     margin: 0px;
-	padding:0px;
+    padding: 0px;
 }
+
+ul li {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #222;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-style: normal;
+    line-height: 1.4;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    margin-left: 0px;
+    padding: 0px;
+    text-rendering: optimizeLegibility;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
 body {
     margin: 0px;
     padding: 0px;
@@ -27,7 +51,7 @@ body {
     background-color: rgb(0, 150, 166);
     height: 60px;
     margin: 0px;
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .top-h1 {
@@ -37,7 +61,7 @@ body {
 }
 
 .top-h1 img {
-    height: 60px; 
+    height: 60px;
 }
 
 .head-nav {
@@ -51,61 +75,82 @@ body {
     color: #FFFFFF;
     display: inline-block;
 }
- .content {
- 	margin: 0px; 
- 	overflow: hidden;
- }
- .content .right{
- 	width:350px;
- 	float: right;  
- 	margin: 20px 20px 20px 10px;
- 	border-right: 3px solid gray;
- 	border-bottom: 3px solid gray; 
- 	background-color: #FFFFFF;
- }
 
- .content .right h2{
-    height:40px;
+.content {
+    margin: 0px;
+    overflow: hidden;
+}
+
+.content .right {
+    width: 350px;
+    float: right;
+    margin: 20px 20px 20px 10px;
+    border-right: 3px solid gray;
+    border-bottom: 3px solid gray;
+    background-color: #FFFFFF;
+}
+
+.content .right h2 {
+    height: 40px;
     line-height: 40px;
     margin-left: 10px;
+    margin-top:5px;
     padding-left: 10px;
     border-left: 3px solid gray;
- }
-
-.content .right div{
- 	margin: 10px 0px;
- }
- .right ul{
-	 margin-left: 30px;
- }
- .right ul li{
-	 line-height: 25px;
- }
-
-.content .left{  
-	margin: 20px 390px 20px 20px; 
 }
 
-.content .left article{
-	margin-bottom: 20px;
-	padding: 20px;
-	background-color: #FFFFFF;
- 	border-right: 3px solid gray;
- 	border-bottom: 3px solid gray; 
-	overflow: hidden;
+.content .right div {
+    margin: 10px 0px;
 }
 
-.content .left article .author{
-	text-indent: 0em;
-	font-size: 14px;
-	color:gray;
+.right ul {
+    margin-left: 30px;
 }
 
-.content .left article p{
-	text-indent: 2em;
-	font-size: 16px;
-	color:black;  
-	line-height: 180%;
+.right ul li {
+    line-height: 25px;
+}
+
+.content .left {
+    margin: 20px 390px 20px 20px;
+}
+
+.content .left article {
+    margin-bottom: 20px;
+    padding: 0px 20px 20px 20px;
+    background-color: #FFFFFF;
+    border-right: 3px solid gray;
+    border-bottom: 3px solid gray;
+    overflow: hidden;
+}
+ 
+.content .left article ul li {
+    line-height: 25px;
+}
+ 
+.content .left article p h2,h1,h3,h4,h5,h6,h7{
+    margin: 10px 0px 10px 0px;
+    padding: 0px;
+}
+.content .left article .author {
+    text-indent: 0em;
+    font-size: 14px;
+    color: gray;
+}
+
+.content .left article p {
+    text-indent: 2em;
+    font-size: 16px;
+    color: black;
+    line-height: 180%;
+}
+
+.content .left .lefthead {
+    margin: 0px;
+    border: 0px;
+    border-right:3px solid gray; 
+    padding-bottom: 0px;
+    padding-top: 10px;
 }
 
 .copyright {
@@ -116,4 +161,62 @@ body {
     text-align: center;
     padding: 0px;
     margin-bottom: 0px;
+}
+
+
+/*code*/
+
+.leftlist li:hover{
+    background-color: rgb(230,230,230);
+    font-style: italic;
+    font-weight: bolder;
+}
+ 
+.content .left article pre {
+    /**/
+    white-space: pre-wrap;
+    /* css-3 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ 
+    background-color: #f8f8f8;*/
+    border: 1px solid #dfdfdf;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding: 0.125rem 0.3125rem 0.0625rem;
+
+    font-size: 12px;
+    padding: 0;
+    margin-left:0px;
+    background: #f0f0f0;
+    line-height: 20px;
+    overflow: auto;
+    /**/background: url(../Images/code-bg.png) repeat-y left top; 
+    overflow-Y: hidden;
+}
+
+
+.content .left article pre code {
+    background-color: transparent;
+    border: 0;
+    margin: 0 0 0 20px;
+    padding: 0px 0;
+    display: block;
+}
+
+code {
+    /**/background-color: #f8f8f8;
+    border-color: #dfdfdf;
+    border-style: solid;
+    border-width: 1px;
+    color: #333;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    font-weight: normal;
+    padding: 0.125rem 0.3125rem 0.0625rem;
+    text-indent: 0em;
 }
