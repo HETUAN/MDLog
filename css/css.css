@@ -138,8 +138,7 @@ body {
     color: gray;
 }
 
-.content .left article p {
-    text-indent: 2em;
+.content .left article p { 
     font-size: 16px;
     color: black;
     line-height: 180%;
