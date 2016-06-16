@@ -1,4 +1,4 @@
-# C#
+## CSharp
 
 1. cmd下执行类似的命令便可以生成exe程序：
 ``` bash
@@ -9,9 +9,9 @@ C:\Windows\Microsoft.Net\Framework\v4.0.30319\msbuild.exe hello.csproj
 
 3. 打开index.html便可以查看
 
-> 发布到IIS上时可能要添加允许请求的文件类型(ContentType)
+> 发布到IIS上时可能要添加允许请求的文件类型(ContentType)[json,md]可以参考web.config文件
 
-# python
+## python
 
 直接运行即可
 ``` bash
@@ -19,7 +19,7 @@ cd 项目根目录\Program\py
 python MDLog.py
 ```
 
-# node.js
+## node.js
 
 待写
 
