@@ -1,0 +1,69 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/test.css" />
+    <script type="text/javascript">
+        var jsonlist; // 数据列表
+
+        // 加载数据
+        function LoadJson() {
+            $.get("/Data/files.json", function(data, status) {
+                console.log(status);
+                console.log(data);
+                jsonlist = data;
+                renderRight();
+                renderIndex();
+            });
+        }
+
+        window.onload = function() {
+            LoadJson();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="position">
+        <div class="head">
+            <div class="head-position">
+                <div class="left-logo"><img src="Images/head.png" /></div>
+                <center>
+                    My Blog
+                    <span>Sub Title</span>
+                    <div>
+                        <a href="#">归档</a>/
+                        <a href="#">分类</a>/
+                        <a href="#">标签</a>/
+                        <a href="#">关于</a>
+                    </div>
+                </center>
+            </div>
+        </div>
+        <div class="main">
+            <div class="content">
+                <h1 id="main-title"> 这是一个标题|开源包管理系统和环境管理系统 Conda</h1>
+                <h3 id="sub-title">CSharp&nbsp;&nbsp;/&nbsp;&nbsp;2016-06-14&nbsp;&nbsp;/&nbsp;&nbsp;Class</h3>
+                <h6 id="split-line"></h6>
+                <article id="article">
+                    <ul>
+                        <li><a><span>asdf</span><span>2016-06-15</span></a></li>
+                        <li><a><span>asdf</span><span>2016-06-15</span></a></li>
+                        <li><a><span>asdf</span><span>2016-06-15</span></a></li>
+                        <li><a><span>asdf</span><span>2016-06-15</span></a></li>
+                        <li><a><span>asdf</span><span>2016-06-15</span></a></li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="content">
+                <center class="copyright">
+                    CopyRight &copy; Bruce
+                </center>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
