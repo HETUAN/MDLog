@@ -1,6 +1,6 @@
 {
-    "title":"SQLMap Install",
-    "time":"2016-06-07 15:26"
+    "title":"sql注入漏洞检测工具 SQLMap Install",
+    "time":"2013-06-02 15:26"
 }
 ------
 SQLMap_Install.MD

@@ -3,6 +3,8 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="css/test.css" />
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/showdown.js"></script>
     <script type="text/javascript">
         var jsonlist; // 数据列表
 
@@ -11,14 +13,104 @@
             $.get("/Data/files.json", function(data, status) {
                 console.log(status);
                 console.log(data);
-                jsonlist = data;
-                renderRight();
+                jsonlist = orderByTime(data);
+                console.log(jsonlist);
                 renderIndex();
             });
         }
 
+        // 加载数据列表
+        function renderIndex() {
+            //
+            $("#main-title").html("文章列表");
+            $("#sub-title").html("");
+            var listStr = "";
+            var len = jsonlist.length;
+            if (len <= 0) {
+                $("#article").html("<h2>没有数据</h2>");
+                return;
+            }
+            var currentYear = (new Date(jsonlist[0].time)).getFullYear();
+            listStr += "<h4>" + currentYear + "</h4>";
+            listStr += "<ul class=\"article-list-ul\">";
+            for (var i = 0; i < len; i++) {
+                var y = (new Date(jsonlist[i].time)).getFullYear();
+                if (currentYear != y) {
+                    currentYear = y;
+                    listStr += "</ul><h4>" + currentYear + "</h4><ul class=\"article-list-ul\">";
+                }
+                listStr += "<li><span>" + jsonlist[i].time + " >></span><a href=\"javascript:OpenMD(" + i + ",'" + jsonlist[i].url + "')\">" + jsonlist[i].title + "</a></li>";
+            }
+            listStr += "</ul>";
+            $("#article").html(listStr);
+            console.log(listStr);
+        }
+
+        // 将数据按时间排序
+        function orderByTime(data) {
+            //
+            var arr = [];
+            var len = data.files.length;
+            for (var i = 0; i < len; i++) {
+                arr.push(data.files[i]);
+                //listStr += "<li><a href=\"javascript:OpenMD(" + i + ",'" + jsonlist.files[i].url + "')\">" + jsonlist.files[i].title + "</a><span style='float:right;'>" + jsonlist.files[i].time + "</span></li>";
+            }
+            arr.sort(function(a, b) {
+                if (a == null || a.time == null || a.time == undefined) {
+                    return 1;
+                } else if (b == null || b.time == null || b.time == undefined) {
+                    return -1;
+                } else {
+                    if (a.time >= b.time) {
+                        return -1;
+                    } else {
+                        return 1;
+                    }
+                }
+            })
+            return arr;
+        }
+
+        // 打开MD文件
+        function OpenMD(i, path) {
+            $("#main-title").html(jsonlist[i].title);
+            $("#sub-title").html(jsonlist[i].time);
+            $.get(path, function(data, status) {
+                console.log(status);
+                console.log(data);
+                if (status == "success") {
+                    var idx = data.indexOf("------");
+                    data = data.substr(idx + 6);
+                    // 编译
+                    data = ConverterToHtml(data);
+                    $("#article").html(data);
+                }
+            });
+        }
+
+        // MD文档转化
+        function ConverterToHtml(md) {
+            var converter = new showdown.Converter();
+            return converter.makeHtml(md);
+        }
+
+        // 右侧工具栏设置
+        function toolsSet() {
+            //
+            var boswer_width = document.documentElement.clientWidth;
+            var tool_right = (boswer_width - 1024) / 2 - 86;
+            console.log(tool_right);
+            $("#tool").css("right", tool_right + "px");
+            window.onresize = function() {
+                var boswer_width = document.documentElement.clientWidth;
+                var tool_right = (boswer_width - 1024) / 2 - 86;
+                console.log(tool_right);
+                $("#tool").css("right", tool_right + "px");
+            }
+        }
         window.onload = function() {
             LoadJson();
+            toolsSet();
         }
     </script>
 </head>
@@ -32,7 +124,7 @@
                     My Blog
                     <span>Sub Title</span>
                     <div>
-                        <a href="#">归档</a>/
+                        <a href="javascript:renderIndex()">归档</a>/
                         <a href="#">分类</a>/
                         <a href="#">标签</a>/
                         <a href="#">关于</a>
@@ -42,18 +134,30 @@
         </div>
         <div class="main">
             <div class="content">
-                <h1 id="main-title"> 这是一个标题|开源包管理系统和环境管理系统 Conda</h1>
+                <h1 id="main-title"> 这是一个标题</h1>
                 <h3 id="sub-title">CSharp&nbsp;&nbsp;/&nbsp;&nbsp;2016-06-14&nbsp;&nbsp;/&nbsp;&nbsp;Class</h3>
                 <h6 id="split-line"></h6>
                 <article id="article">
-                    <ul>
-                        <li><a><span>asdf</span><span>2016-06-15</span></a></li>
-                        <li><a><span>asdf</span><span>2016-06-15</span></a></li>
-                        <li><a><span>asdf</span><span>2016-06-15</span></a></li>
-                        <li><a><span>asdf</span><span>2016-06-15</span></a></li>
-                        <li><a><span>asdf</span><span>2016-06-15</span></a></li>
+                    <h4>2015</h4>
+                    <ul class="article-list-ul">
+                        <li><span>2016-06-15 >></span><a href="#">开源包管理系统和环境管理系统</a></li>
+                        <li><span>2016-06-15 >></span><a href="#">开源包管理系统和环境管理系统</a></li>
+                        <li><span>2016-06-15 >></span><a href="#">开源包管理系统和环境管理系统</a></li>
+                        <li><span>2016-06-15 >></span><a href="#">开源包管理系统和环境管理系统</a></li>
+                        <li><span>2016-06-15 >></span><a href="#">开源包管理系统和环境管理系统</a></li>
+                    </ul>
+                    <h4>2015</h4>
+                    <ul class="article-list-ul">
+                        <li><span>2016-06-15 >></span><a href="#">开源包管理系统和环境管理系统</a></li>
+                        <li><span>2016-06-15 >></span><a href="#">开源包管理系统和环境管理系统</a></li>
+                        <li><span>2016-06-15 >></span><a href="#">开源包管理系统和环境管理系统</a></li>
+                        <li><span>2016-06-15 >></span><a href="#">开源包管理系统和环境管理系统</a></li>
+                        <li><span>2016-06-15 >></span><a href="#">开源包管理系统和环境管理系统</a></li>
                     </ul>
                 </article>
+                <div id="tool">
+                    <div id="go-top"><a href="javascript:scroll(0,0)">^</a></div>
+                </div>
             </div>
         </div>
         <div class="foot">

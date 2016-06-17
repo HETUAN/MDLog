@@ -1,122 +1,262 @@
  * {
-            margin: 0px;
-            padding: 0px;
-            font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif, "微软雅黑";
-        }
-        
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-        
-        body {
-            background-color: rgb(255, 255, 255);
-        }
-        /*head*/
-        
-        .head {
-            height: 99px;
-            width: 100%;
-            background-color: rgb(0, 150, 166);
-        }
-        
-        .head-position {
-            margin-top: 0px;
-            margin-bottom: 0px;
-            margin-left: auto;
-            margin-right: auto;
-            width: 1024px;
-        }
-        
-        .head .head-position center {
-            line-height: 66px;
-            font-size: 36px;
-            color: rgb(255, 255, 255);
-        }
-        
-        .head .head-position center span {
-            margin-left: 20px;
-            font-size: 18px;
-        }
-        
-        .head .head-position center div {
-            color: rgb(3, 54, 73);
-            /*color: goldenrod;
+     margin: 0px;
+     padding: 0px;
+     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif, "微软雅黑";
+ }
+ 
+ a {
+     color: inherit;
+     text-decoration: none;
+ }
+ 
+ body {
+     background-color: rgb(255, 255, 255);
+ }
+ /*head*/
+ 
+ .head {
+     height: 99px;
+     width: 100%;
+     background-color: rgb(0, 150, 166);
+ }
+ 
+ .head-position {
+     margin-top: 0px;
+     margin-bottom: 0px;
+     margin-left: auto;
+     margin-right: auto;
+     width: 1024px;
+ }
+ 
+ .head .head-position center {
+     line-height: 66px;
+     font-size: 36px;
+     color: rgb(255, 255, 255);
+ }
+ 
+ .head .head-position center span {
+     margin-left: 20px;
+     font-size: 18px;
+ }
+ 
+ .head .head-position center div {
+     color: rgb(3, 54, 73);
+     /*color: goldenrod;
             font-weight: bold;*/
-            font-family: "Microsoft YaHei" ! important;
-            line-height: 15px;
-            font-size: 18px;
-        }
-        
-        .head .head-position center div a {
-            margin-right: 15px;
-            margin-left: 7px;
-        }
-        
-        .head .head-position center div a:hover {
-            text-decoration: underline;
-        }
-        
-        .left-logo {
-            float: left;
-        }
-        
-        .left-logo img {
-            width: 95px;
-            height: 95px;
-        }
-        /*center*/
-        
-        .mian {
-            height: 10px;
-            width: 100%;
-            background-color: rgb(199, 237, 233);
-        }
-        
-        .content {
-            margin-top: 0px;
-            margin-bottom: 0px;
-            margin-left: auto;
-            margin-right: auto;
-            width: 1024px;
-            color: rgb(3,54,73);
-        }
-        
-        #main-title {
-            font-weight: normal;
-            margin-top: 33px;
-        }
-        
-        #sub-title {
-            font-size: 14px;
-            font-style : italic;
-            font-weight: normal;
-            margin-top: 22px;
-            padding-bottom: 11px;
-        }
-    
-        #split-line{
-            border-top: 3px solid rgb(0, 150, 166);
-            margin: 0px;
-            padding: 0px;
-            width: 100%;
-        }
-
-        #article {
-            margin-top: 33px;
-            margin-bottom: 33px;
-        }
-        /*foot*/
-        
-        .foot {
-            background-color: rgb(0, 150, 166);
-            height: 66px;
-            width: 100%;
-        }
-        
-        .copyright {
-            padding-top: 30px;
-            font-size: 12px;
-            color: rgb(255, 255, 255);
-            vertical-align: middle;
-        }
+     font-family: "Microsoft YaHei" ! important;
+     line-height: 15px;
+     font-size: 18px;
+ }
+ 
+ .head .head-position center div a {
+     margin-right: 15px;
+     margin-left: 7px;
+ }
+ 
+ .head .head-position center div a:hover {
+     text-decoration: underline;
+ }
+ 
+ .left-logo {
+     float: left;
+ }
+ 
+ .left-logo img {
+     width: 95px;
+     height: 95px;
+ }
+ /*center*/
+ 
+ .mian {
+     height: 10px;
+     width: 100%;
+     background-color: rgb(199, 237, 233);
+ }
+ 
+ .content {
+     margin-top: 0px;
+     margin-bottom: 0px;
+     margin-left: auto;
+     margin-right: auto;
+     width: 1024px;
+     color: rgb(3, 54, 73);
+     position: relative;
+ }
+ 
+ #main-title {
+     font-weight: normal;
+     margin-top: 33px;
+ }
+ 
+ #sub-title {
+     font-size: 14px;
+     font-style: italic;
+     font-weight: normal;
+     margin-top: 22px;
+     padding-bottom: 11px;
+ }
+ 
+ #split-line {
+     border-top: 3px solid rgb(0, 150, 166);
+     margin: 0px;
+     padding: 0px;
+     width: 100%;
+ }
+ 
+ #article {
+     margin-top: 33px;
+     margin-bottom: 33px;
+ }
+ 
+ .article-list-ul {
+     list-style: none;
+     margin: 5px 0px 5px 10px;
+ }
+ 
+ .article-list-ul li {
+     line-height: 22px;
+ }
+ 
+ .article-list-ul li span {
+     margin-right: 22px;
+     letter-spacing: 1px;
+ }
+ 
+ .article-list-ul li a {
+     color: orange;
+ }
+ 
+ .article-list-ul li a:hover {
+     color: rgb(3, 54, 73);
+     font-style: italic;
+     font-weight: bold;
+ }
+ /*foot*/
+ 
+ .foot {
+     background-color: rgb(0, 150, 166);
+     height: 66px;
+     width: 100%;
+ }
+ 
+ .copyright {
+     padding-top: 30px;
+     font-size: 12px;
+     color: rgb(255, 255, 255);
+     vertical-align: middle;
+ }
+ /*tool*/
+ 
+ #tool {
+     position: fixed;
+     width: 33px;
+     height: 66px;
+     background: #eee;
+     bottom: 99px;
+     right: 20px;
+     background-color: #DCFCE9;
+     text-align: center;
+     /*
+     position: absolute;
+     bottom: 0px;
+     right: -22px;
+     width: 22px;
+     height: 22px;
+     background-color: gray;*/
+ }
+ 
+ #go-top {
+     border-radius: 5px;
+     width: 33px;
+     height: 33px;
+     background-color: gray;
+ }
+ 
+ #go-top a {
+     width: 33px;
+     height: 33px;
+     line-height: 33px;
+     font-size: 24px;
+     background-color: gray;
+ }
+ 
+ #go-top a:hover {
+     background-color: greenyellow;
+ }
+ /*code*/
+ 
+ #article pre {
+     /**/
+     white-space: pre-wrap;
+     /* css-3 */
+     white-space: -moz-pre-wrap;
+     /* Mozilla, since 1999 */
+     white-space: -pre-wrap;
+     /* Opera 4-6 */
+     white-space: -o-pre-wrap;
+     /* Opera 7 */
+     word-wrap: break-word;
+     /* Internet Explorer 5.5+ 
+    background-color: #f8f8f8;*/
+     border: 1px solid #dfdfdf;
+     margin-top: 1.5em;
+     margin-bottom: 1.5em;
+     padding: 0.125rem 0.3125rem 0.0625rem;
+     font-size: 12px;
+     padding: 0;
+     margin-left: 0px;
+     background: #f0f0f0;
+     line-height: 20px;
+     overflow: auto;
+     /**/
+     background: url(../Images/code-bg.png) repeat-y left top;
+     overflow-Y: hidden;
+ }
+ 
+ #article pre code {
+     background-color: transparent;
+     border: 0;
+     margin: 0 0 0 20px;
+     padding: 0px 0;
+     display: block;
+ }
+ 
+ code {
+     /**/
+     background-color: #f8f8f8;
+     border-color: #dfdfdf;
+     border-style: solid;
+     border-width: 1px;
+     color: #333;
+     font-family: Consolas, "Liberation Mono", Courier, monospace;
+     font-weight: normal;
+     padding: 0.125rem 0.3125rem 0.0625rem;
+     text-indent: 0em;
+ }
+ 
+ #article ul li {
+     line-height: 25px;
+ }
+ 
+ #article p h2,
+ h1,
+ h3,
+ h4,
+ h5,
+ h6,
+ h7 {
+     margin: 10px 0px 10px 0px;
+     padding: 0px;
+ }
+ 
+ #article .author {
+     text-indent: 0em;
+     font-size: 14px;
+     color: gray;
+ }
+ 
+ #article p {
+     font-size: 16px;
+     color: black;
+     line-height: 180%;
+ }
