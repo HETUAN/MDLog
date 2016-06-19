@@ -156,6 +156,8 @@
      right: 20px;
      background-color: #DCFCE9;
      text-align: center;
+     padding: 0px;
+     margin: 0px;
      /*
      position: absolute;
      bottom: 0px;
@@ -164,15 +166,13 @@
      height: 22px;
      background-color: gray;*/
  }
- 
+  
  #go-top {
-     border-radius: 5px;
-     width: 33px;
-     height: 33px;
-     background-color: gray;
- }
- 
- #go-top a {
+     display:block;
+     position: relative;
+     top: 0px;
+     left: 0px;
+     text-align: center;
      width: 33px;
      height: 33px;
      line-height: 33px;
@@ -180,8 +180,57 @@
      background-color: gray;
  }
  
- #go-top a:hover {
-     background-color: greenyellow;
+ #go-top:hover {
+     background-color: #DCFCE9;
+ }
+
+ #show-menu{
+     display:block;
+     position: relative;
+     top: 0px;
+     left: 0px;
+     text-align: center;
+     width: 33px;
+     height: 33px;
+     line-height: 33px;
+     font-size: 24px;
+     background-color: gray;
+ }
+
+ #show-menu:hover{
+     background-color: #DCFCE9;
+     cursor: pointer;
+ }
+
+ #content-menu{
+     display:block;
+     position: relative;
+     top: -333px;
+     left:-222px;
+     width: 222px;
+     height:333px;
+     background-color: red;
+     display: none;
+ }
+#menu-article{
+     width: 222px;
+     height:323px;
+     padding-top: 5px;
+     padding-bottom: 5px;
+     overflow-y: auto;
+     overflow-x: hidden;
+}
+ .menu-article-ul{
+     list-style: none;
+     margin: 5px 0px 5px 10px;
+ }
+ 
+ .menu-article-ul li{
+     line-height: 22px;
+     font-size: 12px;
+ }
+
+ .menu-article-ul li{
  }
  /*code*/
  
