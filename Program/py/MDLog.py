@@ -50,7 +50,7 @@ def insert_other_data_into_head(head,path):
     # print "------"
     # print path
     # print base
-    # print path.replace(base,"")
+    path = path.replace(base,"/MDLog")
     idx = head.rfind("}")
     head = head[:idx-1]+",\n\"url\":\"" + path.replace(base+"\\","").replace("\\","/") + "\""+"}"
     return head;
