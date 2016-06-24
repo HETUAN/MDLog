@@ -6,6 +6,7 @@
     <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="scripts/showdown.js"></script>
     <script type="text/javascript">
+        
         var jsonlist = []; // 数据列表
 
         // 加载数据
@@ -13,7 +14,8 @@
             $.get("/Data/files.json", function(data, status) {
                 //console.log(status);
                 //console.log(data);
-                jsonlist = orderByTime(JSON.parse(data));
+                var list = orderByTime(data);
+                jsonlist = list;
                 //console.log(jsonlist);
                 renderIndex();
             renderMenuList();
